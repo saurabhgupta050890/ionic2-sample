@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{region}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="serachCountries($event)"></ion-searchbar>
+  <div *ngIf="countries.length <= 0"> Loading Country List .... </div>
+  <ion-list>
+    <ion-card *ngFor="let country of filteredCountries" (click)="loadCountryDetails(country)">
+      <ion-card-content>
+        {{country.name}} ({{country.nativeName}})
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

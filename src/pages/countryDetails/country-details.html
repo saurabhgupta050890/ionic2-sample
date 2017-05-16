@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{countryDetails.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <img [src]="countryDetails.flag"/>
+        <ion-card-content>
+            <ion-card-title>
+            Capital: {{countryDetails.capital}}
+            </ion-card-title>
+            <div class="card-subtitle">
+                Population: {{countryDetails.population}}
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
